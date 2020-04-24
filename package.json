@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/shusuke-nakamura/express-app/issues"
   },
-  "homepage": "https://github.com/shusuke-nakamura/express-app#readme"
+  "homepage": "https://github.com/shusuke-nakamura/express-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
