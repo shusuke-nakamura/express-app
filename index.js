@@ -9,16 +9,19 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   // index.ejsをレンダリングする
   var msg = "This is Express Page!<br>" + "これは、スタイルシートを利用した例です。";
+  var url = "/other?name=taro&pass=yamada";
   res.render('index.ejs', {
     title: 'Index',
     content: msg,
-    link:{href: '/other', text: '※別のページへ移動'},
+    link:{href: url, text: '※別のページへ移動'},
   });
 });
 
 // ※ otherページ
 app.get('/other', (req, res) => {
-  var msg = "This is Other Page!<br>" + "これは、用意された別のページです。";
+  var name = req.query.name;
+  var pass = req.query.pass;
+  var msg = "あなたの名前は「" + name + "」<br>パスワードは「" + pass + "」です。";
   res.render('index.ejs', {
     title: 'Other',
     content: msg,
